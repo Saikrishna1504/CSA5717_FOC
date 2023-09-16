@@ -1,20 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-void printDigits(int num) {
- int digit;
- num = abs(num); 
- while (num > 0) {
- digit = num % 10;
- printf("%d ", digit);
- num = num / 10;
- }
-}
-int main() {
- int number;
- printf("Enter an integer number: ");
- scanf("%d", &number);
- printf("Printing digits of the number: ");
- printDigits(number);
- return 0;
-}
 
+int main() {
+    int number;
+    
+    printf("Enter an integer number: ");
+    scanf("%d", &number);
+
+    printf("Digits of the number: ");
+
+    // Extract and print digits one by one
+    while (number != 0) {
+        int digit = number % 10; // Get the last digit
+        printf("%d ", digit);
+        number /= 10; // Remove the last digit
+    }
+
+    printf("\n");
+
+    return 0;
+}
